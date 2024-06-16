@@ -63,7 +63,9 @@ function checkEmail(email){
   passport.deserializeUser((user, done) => {
     done(null, user);
   });
-  
+app.get('/',(req,res)=>{
+  res.send("hoho");
+})
 app.use(
     cors()
   );
