@@ -63,11 +63,12 @@ function checkEmail(email){
   passport.deserializeUser((user, done) => {
     done(null, user);
   });
-app.get('/',(req,res)=>{
-  res.send("hoho");
-})
+
 app.use(
-    cors()
+    cors(
+      {origin: 'http://localhost:5173',  // Replace with the origin of your frontend
+    credentials: true,}
+    )
   );
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
