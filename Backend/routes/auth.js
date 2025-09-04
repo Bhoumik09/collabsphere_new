@@ -19,7 +19,6 @@ async function getId(email) {
 const checkEmail = async (email) => {
   try {
     if (email === undefined) return false;
-    console.log(email);
     const user = await User.findOne({ email: email });
     return !!user; // Returns true if user exists, false otherwise
   } catch (error) {
